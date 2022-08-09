@@ -16,7 +16,7 @@ public class Role extends Base {
     @Column
     private String name;
     @ManyToMany(mappedBy = "roles")
-    private List<User> posts = new ArrayList<>();
+    private List<User> users = new ArrayList<>();
 
     public String getCode() {
         return this.code;
@@ -35,11 +35,11 @@ public class Role extends Base {
     }
 
     public List<User> getPosts() {
-        return posts;
+        return users;
     }
 
-    public void setPosts(List<User> posts) {
-        this.posts = posts;
+    public void setPosts(List<User> users) {
+        this.users = users;
     }
 
 }
