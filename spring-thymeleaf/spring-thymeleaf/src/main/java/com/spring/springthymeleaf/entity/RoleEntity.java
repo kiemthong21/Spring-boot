@@ -1,27 +1,25 @@
-package com.spring.springthymeleaf.model;
+package com.spring.springthymeleaf.entity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "category")
-public class Category extends Base {
-
+@Table(name = "role")
+public class RoleEntity extends BaseEntity {
     @Column
     private String code;
     @Column
     private String name;
-
-    @OneToMany(mappedBy = "category")
-    private List<New> news = new ArrayList<>();
+    @ManyToMany(mappedBy = "roles")
+    private List<UserEntity> users = new ArrayList<>();
 
     public String getCode() {
-        return code;
+        return this.code;
     }
 
     public void setCode(String code) {
@@ -29,19 +27,19 @@ public class Category extends Base {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public List<New> getNews() {
-        return news;
+    public List<UserEntity> getPosts() {
+        return users;
     }
 
-    public void setNews(List<New> news) {
-        this.news = news;
+    public void setPosts(List<UserEntity> users) {
+        this.users = users;
     }
 
 }

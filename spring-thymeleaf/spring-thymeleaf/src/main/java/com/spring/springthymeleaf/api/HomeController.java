@@ -1,4 +1,4 @@
-package com.spring.springthymeleaf.controller;
+package com.spring.springthymeleaf.api;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

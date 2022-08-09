@@ -1,4 +1,4 @@
-package com.spring.springthymeleaf.model;
+package com.spring.springthymeleaf.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "user")
-public class User extends Base {
+public class UserEntity extends BaseEntity {
     @Column
     private String username;
     @Column
@@ -25,7 +25,7 @@ public class User extends Base {
     @ManyToMany
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 
-    private List<Role> roles = new ArrayList<>();
+    private List<RoleEntity> roles = new ArrayList<>();
 
     public String getUsername() {
         return this.username;
@@ -59,11 +59,11 @@ public class User extends Base {
         this.status = status;
     }
 
-    public List<Role> getRoles() {
+    public List<RoleEntity> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<Role> roles) {
+    public void setRoles(List<RoleEntity> roles) {
         this.roles = roles;
     }
 

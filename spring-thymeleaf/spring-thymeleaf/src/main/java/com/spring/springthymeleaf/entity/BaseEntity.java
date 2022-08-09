@@ -1,4 +1,4 @@
-package com.spring.springthymeleaf.model;
+package com.spring.springthymeleaf.entity;
 
 import java.util.Date;
 
@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public abstract class Base {
+public abstract class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

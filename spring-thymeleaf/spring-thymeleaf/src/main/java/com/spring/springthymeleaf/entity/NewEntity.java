@@ -1,4 +1,4 @@
-package com.spring.springthymeleaf.model;
+package com.spring.springthymeleaf.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "news")
-public class New extends Base {
+public class NewEntity extends BaseEntity {
     @Column
     private String title;
     @Column
@@ -21,7 +21,7 @@ public class New extends Base {
     @ManyToOne
     @JoinColumn(name = "category_id")
 
-    private Category category;
+    private CategoryEntity category;
 
     public String getTitle() {
         return title;
@@ -55,11 +55,11 @@ public class New extends Base {
         this.content = content;
     }
 
-    public Category getCategory() {
+    public CategoryEntity getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(CategoryEntity category) {
         this.category = category;
     }
 
