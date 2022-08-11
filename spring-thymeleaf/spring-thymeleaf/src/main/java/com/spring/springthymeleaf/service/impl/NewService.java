@@ -78,4 +78,10 @@ public class NewService implements INewService {
 
     }
 
+    @Override
+    public NewDTO findNewByTitle1(String title) {
+        NewEntity entities = newRepository.findNewByTitle(title);
+        NewDTO result = newConverter.toDTO(entities);
+        return result;
+    }
 }

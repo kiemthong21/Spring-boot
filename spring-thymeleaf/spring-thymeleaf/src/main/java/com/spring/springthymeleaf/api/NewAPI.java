@@ -23,15 +23,16 @@ public class NewAPI {
     private INewService newService;
 
     @GetMapping("/new")
-    public NewOutput showNew(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value="limit", required = false) Integer limit){
-        //Neu la object hay 1 mang thi la dung default value
+    public NewOutput showNew(@RequestParam(value = "page", required = false) Integer page,
+            @RequestParam(value = "limit", required = false) Integer limit) {
+        // Neu la object hay 1 mang thi la dung default value
         NewOutput result = new NewOutput();
-        if(page != null && limit != null){
+        if (page != null && limit != null) {
             result.setPage(page);
-            Pageable pageable =  PageRequest.of(page-1,limit);
+            Pageable pageable = PageRequest.of(page - 1, limit);
             result.setListResult(newService.findAll(pageable));
             result.setTotalPage((int) Math.ceil((double) (newService.totalItem()) / limit));
-        }else{
+        } else {
             result.setListResult(newService.findAll());
         }
         return result;
@@ -51,5 +52,12 @@ public class NewAPI {
     @DeleteMapping("/new")
     public void deleteNew(@RequestBody long[] ids) {
         newService.delete(ids);
+    }
+
+    @GetMapping("/testFind")
+    public NewDTO getTest() {
+        NewDTO result = new NewDTO();
+        result = newService.findNewByTitle1("test");
+        return result;
     }
 }
