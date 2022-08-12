@@ -1,1 +1,2 @@
 https://laptrinhjavaweb.com/hoc-spring-boot-2-0-x-thiet-ke-website-ban-hang-159
+https://levunguyen.com/laptrinhspring/2020/04/08/su-dung-thymeleaf-trong-springmvc/
