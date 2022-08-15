@@ -14,6 +14,7 @@
     <name>CarPark</name>
     <description>CarPark</description>
     <properties>
+        <mysql.version>8.0.30</mysql.version>
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
@@ -32,6 +33,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
